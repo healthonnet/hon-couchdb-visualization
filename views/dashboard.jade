@@ -1,0 +1,28 @@
+extend layout
+
+block content
+  #loader.show-while-loading
+  #dashboard-status.hide-while-loading
+    span Showing data for the
+    span#num-loaded 0
+    span most recent documents...
+    span#mini-loader
+    span#pause-it
+      a(href='#') Pause
+  #dashboard-content.hide-while-loading
+    #chart-domains.mini-chart
+    #chart-languages.mini-chart
+    #chart-hosts.mini-chart
+    #chart-sources.mini-chart
+    #chart-hours.mini-chart
+    #chart-speed.mini-chart(style="position:relative;")
+      #chart-speed-loading-overlay
+      h5(style="text-align:left;margin-left: 10px;") Estimated indexing speed (docs/min)
+      #chart-speed-inner
+  #download-raw-data.hide-while-loading
+    a(href='#') Download raw data
+
+
+block scripts
+  script(src="js-lib/jquery.base64.js")
+  script(src='js/dashboard.js')

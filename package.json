@@ -1,0 +1,19 @@
+{
+  "name": "hon-couchdb-visualization",
+  "description": "HON visualization of CouchDB data",
+  "version": "1.4.5",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "jade": "0.35.0",
+    "marked": "0.2.9",
+    "nano": "4.1.1",
+    "querystring": "0.2.0",
+    "node-cache": "0.3.2",
+    "cron": "1.0.1",
+    "time": "0.9.2",
+    "moment": "2.1.0",
+    "underscore": "1.5.1",
+    "express-uglify": "0.3.1"
+  }
+}

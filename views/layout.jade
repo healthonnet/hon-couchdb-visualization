@@ -1,0 +1,32 @@
+!!!5
+html
+  head
+    title Khresmoi CouchDB Visualization
+    link(href='styles/application.css',rel="stylesheet")
+    link(rel='shortcut icon',type='image/x-icon',href='img/favicon.ico')
+    script(src='https://www.google.com/jsapi')
+  body
+    header
+      h1 Khresmoi CouchDB Visualization
+    .container
+      .navigation
+        ul
+          li(class="#{view.id === 'dashboard' && 'selected'}")
+            a(href='dashboard.html') Dashboard
+          each couchdbView in couchdbViews
+            li(class="#{couchdbView.id === view.id && 'selected'}")
+              a(href="#{couchdbView.page}") #{couchdbView.shortName}
+      #main-content
+        block content
+    footer
+      p.text-center
+        :markdown
+          Created by [Nolan Lawson](http://nolanlawson.com) for [Health On the Net](http://www.healthonnet.org).
+          Read the [documentation](http://wiki.khresmoi.eu/index.php5/HON_Crawled_Pages_Service#CouchDB_Visualization_tool)
+          or the [source code](http://khresmoi.atosorigin.es/svn/khresmoi/trunk/wp1/hon-couchdb/couchdb-visualization).
+          Version #{version}.
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(src="js-lib/moment-2.1.0.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js")
+    script(src="js/application.js")
+    block scripts

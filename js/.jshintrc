@@ -1,0 +1,17 @@
+{
+    "browser": true,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "strict": true,
+    "globals": {
+        "moment" : true,
+        "jquery" : true,
+        "google" : true,
+        "_"      : true
+    }
+}

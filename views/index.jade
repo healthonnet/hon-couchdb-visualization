@@ -1,0 +1,24 @@
+extend layout
+
+block content
+  #chart-content
+      #loader.show-while-loading
+      #chart_div.hide-while-loading
+  .couchdb-links.hide-while-loading
+    span
+      a(target='_blank',href='http://couchdb.khresmoi.eu:5984/_utils/database.html?khresmoi_docs/_design/#{view.id}/_view/#{view.id}')
+        | Via Futon
+    span
+      a(target='_blank',href='http://couchdb.khresmoi.eu:5984/khresmoi_docs/_design/#{view.id}/_view/#{view.id}?limit=100&#{view.querystring}')
+        | Via REST
+  .couchdb-links.hide-while-loading
+    span
+      span#update-time
+      a#update-me(href='#') Refresh
+
+
+block scripts
+    script.
+        (function($){
+            CouchdbViz.loadChartData(!{JSON.stringify(view.json)});
+        })(jQuery);
