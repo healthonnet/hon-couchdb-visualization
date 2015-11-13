@@ -5,10 +5,13 @@ var
   host = process.env.COUCHDB_HOST || 'couchdb.khresmoi.eu',
   port = 3000,
 
+  user     = process.env.COUCHDB_USER,
+  password = process.env.COUCHDB_PASSWORD,
+
   // imports
   express = require('express'),
   uglify = require('express-uglify'),
-  nano = require('nano')('http://' + host + ':5984'),
+  nano = require('nano')('http://' + user + ':' + password + '@' + host + ':5984'),
   db = nano.use('khresmoi_docs'),
   NodeCache = require("node-cache"),
   CronJob = require('cron').CronJob,
